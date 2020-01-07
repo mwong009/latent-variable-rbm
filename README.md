@@ -1,3 +1,13 @@
+- [Latent Variable RBM](#latent-variable-rbm)
+  * [File description](#file-description)
+    + [Dataset](#dataset)
+  * [Getting started](#getting-started)
+    + [Prerequisites](#prerequisites)
+  * [Versioning](#versioning)
+  * [Authors](#authors)
+  * [Licence](#licence)
+  * [Bug reporting](#bug-reporting)
+
 # Latent Variable RBM
 RBM discrete choice model.
 The model uses [Theano](https://github.com/Theano/Theano) deep learning library for its backend.
