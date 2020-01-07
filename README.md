@@ -18,6 +18,8 @@ Indicators manage the personal psychometric attributes and are modelled by the h
 Beta parameters are connected from the input variables to the output, conditional on the hidden units.
 This allows the gradient to back prop from the choice likelihood obj. function to the input layer directly to update the beta parameters.
 
+![ICLV](/docs/iclv.png)
+
 ## File description
 ```data/``` contains the dataset files
 
