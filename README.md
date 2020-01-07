@@ -8,6 +8,8 @@ Model files: ```crbm.py```, ```rbm.py```, ```mlp.py```, ```logistic_sgd.py```.
 
 ```utils.py``` misc. functions to generate output visualizations and analytics.
 
+```optimizers.py```, ```neural_networks.py``` core functional files for DNN optimization.
+
 ```build.py``` extracts a .h5 format dataset file from .csv files and automatically segments train, valid and test set. Auto-randomization of observation can be enabled through the ```build_dataset()``` function.
 
 ### Dataset
@@ -19,10 +21,25 @@ The goal is to develop a choice model using a hybrid latent variable and RBM gen
 
 ## Getting started
 To begin, run ```python3 crbm.py``` to estimate the model using the Santander dataset. 
-To run other types of models, use ```python3``` command on ```mlp.py```, ```logistic_sgd.py```, or ```rbm.py```
+To run other types of models, use ```python3``` command on ```mlp.py```, ```logistic_sgd.py```, or ```rbm.py```.
+
+Note: specify the dataset and hyperparameters in the ```test_crbm(dataset='')``` function
+
+### Prerequisites
+Python 3.5+ (with pip3), Numpy, Pandas, Theano
+
+Install requirements through pip:
+
+```
+pip3 install --user -r requirements.txt
+```
 
 ## Versioning
+0.1 Inital version
 
 ## Authors
 
+Melvin Wong ([Github](https://github.com/mwong009))
+
 ## Licence
+See [LICENCE](https://github.com/LiTrans/latent-variable-rbm/blob/master/LICENSE) for details
