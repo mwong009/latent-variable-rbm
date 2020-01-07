@@ -1,0 +1,587 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'
+        'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>Python Biogeme</title>
+<!-- <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' /> -->
+<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+<link href='http://www.epfl.ch/css/epfl.css' media='all'
+	rel='stylesheet' type='text/css' />
+<link href='http://www.epfl.ch/css/epfl.css' media='all'
+	rel='stylesheet' type='text/css' />
+<link href='http://www.epfl.ch/css/enac.css' media='all'
+	rel='stylesheet' type='text/css' />
+<script type='text/javascript'
+	src='http://www.epfl.ch/js/jquery-epfl.min.js'></script>
+<script type='text/javascript'>jQuery.noConflict();</script>
+<script type='text/javascript' src='http://www.epfl.ch/js/globalnav.js'></script>
+
+</head>
+<body>
+<a name='top'></a>
+<div id='main-content'>
+
+<div class='clear '></div>
+
+ 
+<h1><a href='http://biogeme.epfl.ch'>Python Biogeme <acronym
+	title='Biogeme' class='local-color-text'>Parameters</acronym></a></h1>
+
+<div class='clear '></div>
+
+
+<div id='content' class='content'>
+
+<h2>Python Biogeme: parameters</h2>
+<p>The execution of Biogeme can be controlled by user defined parameters. The syntax is
+<code>
+<pre>
+BIOGEME_OBJECT.PARAMETERS['parameterName'] = 'value'
+</pre>
+</code>
+</p>
+
+<p>
+The <code>parameterName</code> must be one of the names listed below. Depending on the nature of the parameter, the value must be an integer, a real number or a string of characters. The value must be delimited by double quotes.
+</p>
+
+<div class='fullbox'>
+<table>
+<tr><th>Parameter name</th>
+<th>Type of value</th>
+<th>Default value</th>
+<th>Description</th>
+</tr>
+<tr valign='top'>
+<td><code>BTRArmijoBeta1</code></td>
+<td>Real</td>
+<td><code>0.1 </code></td>
+<td></td>
+</tr>
+<tr valign='top'>
+<td><code>BTRArmijoBeta2</code></td>
+<td>Real</td>
+<td><code>0.9 </code></td>
+<td></td>
+</tr>
+<tr valign='top'>
+<td><code>BTREta1</code></td>
+<td>Real</td>
+<td><code>0.01 </code></td>
+<td></td>
+</tr>
+<tr valign='top'>
+<td><code>BTREta2</code></td>
+<td>Real</td>
+<td><code>0.9 </code></td>
+<td></td>
+</tr>
+<tr valign='top'>
+<td><code>BTRGamma1</code></td>
+<td>Real</td>
+<td><code>0.5 </code></td>
+<td></td>
+</tr>
+<tr valign='top'>
+<td><code>BTRGamma2</code></td>
+<td>Real</td>
+<td><code>0.5 </code></td>
+<td></td>
+</tr>
+<tr valign='top'>
+<td><code>BTRIncreaseTRRadius</code></td>
+<td>Real</td>
+<td><code>2 </code></td>
+<td> Defines the factor by which the radius of the trust region is multiplied after a successful iteration.</td>
+</tr>
+<tr valign='top'>
+<td><code>BTRInitRadius</code></td>
+<td>Real</td>
+<td><code>1 </code></td>
+<td>Defines the initial radius of the trust region.</td>
+</tr>
+<tr valign='top'>
+<td><code>BTRKappaEpp</code></td>
+<td>Real</td>
+<td><code>0.25 </code></td>
+<td></td>
+</tr>
+<tr valign='top'>
+<td><code>BTRKappaFrd</code></td>
+<td>Real</td>
+<td><code>0.5 </code></td>
+<td></td>
+</tr>
+<tr valign='top'>
+<td><code>BTRKappaLbs</code></td>
+<td>Real</td>
+<td><code>0.9 </code></td>
+<td></td>
+</tr>
+<tr valign='top'>
+<td><code>BTRKappaUbs</code></td>
+<td>Real</td>
+<td><code>0.1 </code></td>
+<td></td>
+</tr>
+<tr valign='top'>
+<td><code>BTRMaxTRRadius</code></td>
+<td>Real</td>
+<td><code>1e+10 </code></td>
+<td> Defines the maximum radius of the trust region. If this radius is reached, the trust region is not enlarged anymore.</td>
+</tr>
+<tr valign='top'>
+<td><code>BTRMinTRRadius</code></td>
+<td>Real</td>
+<td><code>1e-07 </code></td>
+<td> Defines the minimum radius of the trust region. If this radius is reached, the iterations are interrupted.</td>
+</tr>
+<tr valign='top'>
+<td><code>BTRTolerance</code></td>
+<td>Real</td>
+<td><code>6.05545e-06 </code></td>
+<td>Value used for the stopping criterion of the BIO algorithm.</td>
+</tr>
+<tr valign='top'>
+<td><code>BTRTypf</code></td>
+<td>Real</td>
+<td><code>1 </code></td>
+<td>Typical value of the log likelihood function, with opposite sign </td>
+</tr>
+<tr valign='top'>
+<td><code>MetropolisHastingsNeighborhoodSize</code></td>
+<td>Real</td>
+<td><code>1 </code></td>
+<td>The Markov chain for the Metropolis-Hastings algorithm updates the parameters beta using the following formula: beta + rho ksi, where ksi is a draw from a normal(0,1) and rho is this parameter.</td>
+</tr>
+<tr valign='top'>
+<td><code>NormalTruncation</code></td>
+<td>Real</td>
+<td><code>1.96 </code></td>
+<td>When calculating Monte-Carlo simulation using a symmetric truncated normal distrubtion, this parameters T sets the value of the truncation in the interval [-T:T].</td>
+</tr>
+<tr valign='top'>
+<td><code>TSExpTheta</code></td>
+<td>Real</td>
+<td><code>0.5 </code></td>
+<td></td>
+</tr>
+<tr valign='top'>
+<td><code>TSFractionGradientRequired</code></td>
+<td>Real</td>
+<td><code>0.1 </code></td>
+<td></td>
+</tr>
+<tr valign='top'>
+<td><code>TolSchnabelEskow</code></td>
+<td>Real</td>
+<td><code>0.00492157 </code></td>
+<td></td>
+</tr>
+<tr valign='top'>
+<td><code>cfsqpEps</code></td>
+<td>Real</td>
+<td><code>6.05545e-06 </code></td>
+<td> See CFSQP manual. In  general, it should not be changed.</td>
+</tr>
+<tr valign='top'>
+<td><code>cfsqpEpsEqn</code></td>
+<td>Real</td>
+<td><code>6.05545e-06 </code></td>
+<td>See CFSQP manual. In general, it should not be changed.</td>
+</tr>
+<tr valign='top'>
+<td><code>cfsqpUdelta</code></td>
+<td>Real</td>
+<td><code>0 </code></td>
+<td>See CFSQP manual. In general, it should not be changed.</td>
+</tr>
+<tr valign='top'>
+<td><code>missingValue</code></td>
+<td>Real</td>
+<td><code>99999 </code></td>
+<td>Default value for composite literals.</td>
+</tr>
+<tr valign='top'>
+<td><code>sensitivityAnalysisAlpha</code></td>
+<td>Real</td>
+<td><code>0.05 </code></td>
+<td>Sensitivity analysis is performed by simulation. Biogeme reports the alpha and the 1-alpha quantiles of the simulated values.</td>
+</tr>
+<tr valign='top'>
+<td><code>singularValueThreshold</code></td>
+<td>Real</td>
+<td><code>0.0001 </code></td>
+<td>A singular value lesser of equal to this value is considered to be zero.</td>
+</tr>
+<tr valign='top'>
+<td><code>solvoptErrorArgument</code></td>
+<td>Real</td>
+<td><code>0.0001 </code></td>
+<td></td>
+</tr>
+<tr valign='top'>
+<td><code>solvoptErrorFunction</code></td>
+<td>Real</td>
+<td><code>1e-06 </code></td>
+<td> See <a href='http://www.kfunigraz.ac.at/imawww/kuntsevich/solvopt/ps/manual.pdf'>SOLVOPT manual</a>.  In general, it should not be changed.</td>
+</tr>
+<tr valign='top'>
+<td><code>tTestThreshold</code></td>
+<td>Real</td>
+<td><code>1.96 </code></td>
+<td>Set the threshold for the <em>t</em>-test hypothesis tests. If the absolute value of a <em>t</em>-test is less than the value of this parameter, a symbol * will be appended to the relevant line in the report file (or the symbol defined by the previous parameter).</td>
+</tr>
+<tr valign='top'>
+<td><code>toleranceCheckDerivatives</code></td>
+<td>Real</td>
+<td><code>0.001 </code></td>
+<td>Difference between analytical and finite differences derivative is considered to be significant if greater or equal to this value</td>
+</tr>
+<tr valign='top'>
+<td><code>HeaderForWeightInSimulatedResults</code></td>
+<td>String</td>
+<td><code>__weight </code></td>
+<td>Biogeme includes the weight of each observation in the simulation results. This parameters sets the label of the resulting column in the output.</td>
+</tr>
+<tr valign='top'>
+<td><code>HeaderOfRowId</code></td>
+<td>String</td>
+<td><code>__rowId__ </code></td>
+<td>Biogeme assumes that the data file contains a virtual column where the number of the row is reported. The name of this column is defined by this parameter, and can be used in the specification.</td>
+</tr>
+<tr valign='top'>
+<td><code>OutputFileForSensitivityAnalysis</code></td>
+<td>String</td>
+<td><code>__sensitivity.dat </code></td>
+<td>Biogeme performs sensitivity analysis by simulation. If asked by the user, each simulated value is stored in the file with the name defined by this parameter.</td>
+</tr>
+<tr valign='top'>
+<td><code>RandomDistribution</code></td>
+<td>String</td>
+<td><code>MLHS </code></td>
+<td>Type of draws used for simulating random distributions. Valid values are <dl><dt><code>PSEUDO</code></dt><dd>Pseudo random numbers</dd><dt><code>HALTON</code></dt><dd>Halton sequences</dd><dt><code>MLHS</code></dt><dd> Modified Latin Hypercube Sampling (see <a href='http://dx.doi.org/10.1016/j.trb.2004.10.005'  target='_blank'>Hess et al., 2006</a>).</dd></dl></td>
+</tr>
+<tr valign='top'>
+<td><code>individualId</code></td>
+<td>String</td>
+<td><code>__rowId__ </code></td>
+<td>The name of the variable that identifies the individuals in the sample. It is used by the Bayesian estimation procedure, that generates realizations of random parameters for each individual (see Train, 2003, chap. 12)</td>
+</tr>
+<tr valign='top'>
+<td><code>optimizationAlgorithm</code></td>
+<td>String</td>
+<td><code>BIO </code></td>
+<td>Name of the optimization algorithm used to solve the maximum likelihood estimation problem. Valid values are:<dl><dt>BIO</dt><dd>Trust region method implemented for Biogeme</dd><dt>CFSQP</dt><dd>SQP method by <a href='http://hdl.handle.net/1903/5496' target='_blank'>Craig et al. (1994)</a></dd><dt>SOLVOPT</dt><dd>Implementation of Shor's method by <a href='http://www.kfunigraz.ac.at/imawww/kuntsevich/solvopt/ps/manual.pdf' target='_blank'>Kuntsevich and Kappel (1997)</a></dd></dl>Note that BIOMC is not yet available in Python Biogeme.</td>
+</tr>
+<tr valign='top'>
+<td><code>stopFileName</code></td>
+<td>String</td>
+<td><code>STOP </code></td>
+<td>During the optimization process, Biogeme checks for the existence of a file, whose name is defined by this parameter. If the file exists, Biogeme interrupts the iterations and generate output files. This is convenient to prematurely stop iterations without loosing the computations performed thus far.</td>
+</tr>
+<tr valign='top'>
+<td><code>warningSign</code></td>
+<td>String</td>
+<td><code>* </code></td>
+<td>Signs printed in the estimation report in front of parameters such that the <em>t</em>-test is between -1.96 and 1.96 (or the value defined by the parameter <code>tTestThreshold</code>).</td>
+</tr>
+<tr valign='top'>
+<td><code>BTRCheapHessian</code></td>
+<td>Integer</td>
+<td><code>1 </code></td>
+<td>If 1,  BHHH (see <a href='http://www.nber.org/chapters/c10206.pdf'>Berndt et al, 1974</a>) is used as an approximation of the second derivatives matrix.</td>
+</tr>
+<tr valign='top'>
+<td><code>BTRExactHessian</code></td>
+<td>Integer</td>
+<td><code>1 </code></td>
+<td></td>
+</tr>
+<tr valign='top'>
+<td><code>BTRIncreaseDraws</code></td>
+<td>Integer</td>
+<td><code>2 </code></td>
+<td> If BIOMC is used for  simulated maximum likelihood estimation, this  parameters defines the factor by which  the number of draws  is increased. (Not yet implemented)</td>
+</tr>
+<tr valign='top'>
+<td><code>BTRInitQuasiNewtonWithBHHH</code></td>
+<td>Integer</td>
+<td><code>1 </code></td>
+<td>If 1, the secant update is initialized with the BHHH  (see <a href='http://www.nber.org/chapters/c10206.pdf'>Berndt et al, 1974</a>) approximation (BIO algorithm).</td>
+</tr>
+<tr valign='top'>
+<td><code>BTRInitQuasiNewtonWithTrueHessian</code></td>
+<td>Integer</td>
+<td><code>1 </code></td>
+<td>If 1, the secant update is initialized with the analytical hessian (BIO algorithm).</td>
+</tr>
+<tr valign='top'>
+<td><code>BTRMaxIter</code></td>
+<td>Integer</td>
+<td><code>1000 </code></td>
+<td>Maximum number of iterations to be  performed by the BIO algorithm.</td>
+</tr>
+<tr valign='top'>
+<td><code>BTRQuasiNewtonUpdate</code></td>
+<td>Integer</td>
+<td><code>1 </code></td>
+<td></td>
+</tr>
+<tr valign='top'>
+<td><code>BTRSignificantDigits</code></td>
+<td>Integer</td>
+<td><code>7 </code></td>
+<td></td>
+</tr>
+<tr valign='top'>
+<td><code>BTRStartDraws</code></td>
+<td>Integer</td>
+<td><code>10 </code></td>
+<td>If BIOMC is used for  simulated maximum likelihood estimation, this  parameter defines the number of draws which are used during the first iterations. (Not yet implemented)</td>
+</tr>
+<tr valign='top'>
+<td><code>BTRUnfeasibleCGIterations</code></td>
+<td>Integer</td>
+<td><code>0 </code></td>
+<td></td>
+</tr>
+<tr valign='top'>
+<td><code>BTRUsePreconditioner</code></td>
+<td>Integer</td>
+<td><code>1 </code></td>
+<td> If 1, the subproblem is  preconditioned using a modified Cholesky factorization (see Schnabel and Eskow, 1991).</td>
+</tr>
+<tr valign='top'>
+<td><code>DumpSensitivityAnalysis</code></td>
+<td>Integer</td>
+<td><code>0 </code></td>
+<td>If this parameter is non zero, Biogeme dumps the values simulated during sensitivity analysis in a file.</td>
+</tr>
+<tr valign='top'>
+<td><code>NbrOfDraws</code></td>
+<td>Integer</td>
+<td><code>1000 </code></td>
+<td>Number of draws for the simulation of the random parameters</td>
+</tr>
+<tr valign='top'>
+<td><code>NbrOfDrawsForSensitivityAnalysis</code></td>
+<td>Integer</td>
+<td><code>100 </code></td>
+<td>Number of draws for the empirical sensitivity analysis</td>
+</tr>
+<tr valign='top'>
+<td><code>Seed</code></td>
+<td>Integer</td>
+<td><code>9021967 </code></td>
+<td>Seed for random number generation.</td>
+</tr>
+<tr valign='top'>
+<td><code>accessFirstDataFromMetaIterator</code></td>
+<td>Integer</td>
+<td><code>0 </code></td>
+<td>If the parameter is set to a value different from 0, the first row of a meta iterator can be accessed outside of a rwo iterator. This should be used with caution, as it is in general not the desired effect, and it may hide implementation errors.</td>
+</tr>
+<tr valign='top'>
+<td><code>allowNestedMonteCarlo</code></td>
+<td>Integer</td>
+<td><code>0 </code></td>
+<td>If different from 0, nested MonteCarlo statements are allowed in a formula. In general, the nesting is due to a syntax error, and not explicitly desired. Therefore, the default value is 0.</td>
+</tr>
+<tr valign='top'>
+<td><code>biogemeDisplay</code></td>
+<td>Integer</td>
+<td><code>0 </code></td>
+<td>If 0, only general messages are displayed on the screen. If 1, more detailed messages are provided. If 2 or more, messages designed for debugging purposes are also included.</td>
+</tr>
+<tr valign='top'>
+<td><code>biogemeLogDisplay</code></td>
+<td>Integer</td>
+<td><code>1 </code></td>
+<td>If 0, only general messages are included in the log file. If 1, more detailed messages are provided. If 2 or more, messages designed for debugging purposes are also included.</td>
+</tr>
+<tr valign='top'>
+<td><code>buildAnalyticalGradient</code></td>
+<td>Integer</td>
+<td><code>1 </code></td>
+<td>If 1, Biogeme generates the analytical gradient of the log likelihood. If 0, the finite difference approximation is used instead.</td>
+</tr>
+<tr valign='top'>
+<td><code>cfsqpIprint</code></td>
+<td>Integer</td>
+<td><code>2 </code></td>
+<td> Set it to  1 for silent mode, and to 2 for information at each iteration of the optimization algorithm.</td>
+</tr>
+<tr valign='top'>
+<td><code>cfsqpMaxIter</code></td>
+<td>Integer</td>
+<td><code>1000 </code></td>
+<td>Maximum number of iterations for CFSQP.</td>
+</tr>
+<tr valign='top'>
+<td><code>cfsqpMode</code></td>
+<td>Integer</td>
+<td><code>100 </code></td>
+<td>Even if it is a descent algorithm, CFSQP sometimes allows non-monotone iterates, hoping not to be trapped in local minima. If the function is convex, a descent algorithm is more appropriate. In this case, set the value to 100. See <a href='http://hdl.handle.net/1903/5496' target='_blank'>CFSQP manual</a> for more details.</td>
+</tr>
+<tr valign='top'>
+<td><code>checkDerivatives</code></td>
+<td>Integer</td>
+<td><code>0 </code></td>
+<td>If set to 1, the analytical derivatives of the log likelihood functions and the nonlinear constraints are compared to the finite difference derivatives. This is used mainly for debugging purposes.</td>
+</tr>
+<tr valign='top'>
+<td><code>computeInitLoglikelihood</code></td>
+<td>Integer</td>
+<td><code>1 </code></td>
+<td>If 1, Biogeme computes the log likelihood at the starting point, before running the algorithm.</td>
+</tr>
+<tr valign='top'>
+<td><code>decimalPrecisionForSimulation</code></td>
+<td>Integer</td>
+<td><code>6 </code></td>
+<td>Sets the decimal precision to be used to format floating-point values on output operations with the SIMULATE function.</td>
+</tr>
+<tr valign='top'>
+<td><code>deriveAnalyticalHessian</code></td>
+<td>Integer</td>
+<td><code>1 </code></td>
+<td>The second derivative matrix of the likelihood function is derived if this parameters is different from 0.</td>
+</tr>
+<tr valign='top'>
+<td><code>dumpDrawsOnFile</code></td>
+<td>Integer</td>
+<td><code>0 </code></td>
+<td>If set to 1, Biogeme dumps the draws used for simulated likelihood estimation in the file <code>draws.lis</code>. Another file called <code>model.udraws</code>, where <code>model</code> is the name of the model estimated, contains the uniform draws. </td>
+</tr>
+<tr valign='top'>
+<td><code>firstIdOfLiterals</code></td>
+<td>Integer</td>
+<td><code>10000 </code></td>
+<td>Each literal is assigned a unique ID by Biogeme. The first of these IDs is defined by this parameter. It is recommended not to modify it. </td>
+</tr>
+<tr valign='top'>
+<td><code>includeDataWhenSimulate</code></td>
+<td>Integer</td>
+<td><code>0 </code></td>
+<td>When pythonbiogeme is used to simulate, each variable in the data file are included in the report, if the parameter is set to 1.</td>
+</tr>
+<tr valign='top'>
+<td><code>maxGcpIter</code></td>
+<td>Integer</td>
+<td><code>10000 </code></td>
+<td></td>
+</tr>
+<tr valign='top'>
+<td><code>maxPrimeNumbers</code></td>
+<td>Integer</td>
+<td><code>1000 </code></td>
+<td>The generation of Halton sequences is based on prime numbers. This parameter defines the maximum number of prime numbers that can be used. Most users will never have to change the default value.</td>
+</tr>
+<tr valign='top'>
+<td><code>monteCarloControlVariateReport</code></td>
+<td>Integer</td>
+<td><code>100 </code></td>
+<td>Include reporting about the added value of the control variate method in terms of precision for k Monte-Carlo calculations, where k is the value of the parameter</td>
+</tr>
+<tr valign='top'>
+<td><code>moreRobustToNumericalIssues</code></td>
+<td>Integer</td>
+<td><code>0 </code></td>
+<td>Biogeme performs additional verifications about numerical issues (division by zero, log of zero, overflows, etc.) if the parameter is set to 1. It is at the cost of computing performance. </td>
+</tr>
+<tr valign='top'>
+<td><code>numberOfThreads</code></td>
+<td>Integer</td>
+<td><code>0 </code></td>
+<td>This parameter specifies the number of <a href='http://en.wikipedia.org/wiki/Thread_(computer_science)' target='_blank'>threads</a> that will be launched. Note that it may exceed the actual number of available processors. However, this may affect the performance by creating unnecessary overhead. If the value is 0 (which is the case by default), the number of threads is set to the number of processors, multiplied by the value of the parameter shareOfProcessors / 100. If this number is unavailable, the number of threads is set to 4.</td>
+</tr>
+<tr valign='top'>
+<td><code>printPValue</code></td>
+<td>Integer</td>
+<td><code>1 </code></td>
+<td>If 1, Biogeme prints the <em>p</em>-value in the results. The <em>p</em>-value is computed as follows: if <em>t</em> is the <em>t</em>-test of the parameters, <em>p = 2 (1 - &Phi;(t))</em>,where <em>&Phi;()</em> is the cumulative density function of the univariate normal distribution.</td>
+</tr>
+<tr valign='top'>
+<td><code>saveUniformDraws</code></td>
+<td>Integer</td>
+<td><code>0 </code></td>
+<td>If 1, Biogeme saves the uniform draws used to generate the actual draws. It is used for the test proposed by <a href="http://dx.doi.org/10.1016/j.trb.2007.01.002">Fosgerau and Bierlaire (2007)</a>. It is automatically set to 1 if the operator bioRecycleDraws is used in the model specification.</td>
+</tr>
+<tr valign='top'>
+<td><code>scaleDerivativesInSums</code></td>
+<td>Integer</td>
+<td><code>0 </code></td>
+<td>When calculating derivatives (first and second) of sum, Biogeme divide each element by the value of the function before accumulating them, and re-multiply the final result by the same value. It avoids the accumulation of large numbers, that may go beyond the maximum value that can be represented in memory. Note that it is at the expense of performance.</td>
+</tr>
+<tr valign='top'>
+<td><code>shareOfProcessors</code></td>
+<td>Integer</td>
+<td><code>50 </code></td>
+<td>When the parameter numberOfThreads is set to 0, the number of threads is set to the number of available threads reported by the system, multiplied by the value of this parameter, divided by 100. Zero and negative values are ignored. Because of hyperthreading, some systems report more threads than processors physically available</td>
+</tr>
+<tr valign='top'>
+<td><code>simulateReportForEveryObservation</code></td>
+<td>Integer</td>
+<td><code>1 </code></td>
+<td>If 1, the output file fir simulation includes records for each data set in the data file. If 0, only aggregate values are provided.</td>
+</tr>
+<tr valign='top'>
+<td><code>solvoptDisplay</code></td>
+<td>Integer</td>
+<td><code>1 </code></td>
+<td> Controls the display of the algorithm. See <a href='http://www.kfunigraz.ac.at/imawww/kuntsevich/solvopt/ps/manual.pdf'>SOLVOPT manual</a>. </td>
+</tr>
+<tr valign='top'>
+<td><code>solvoptMaxIter</code></td>
+<td>Integer</td>
+<td><code>1000 </code></td>
+<td> Maximum number of iterations for algorithm SOLVOPT</td>
+</tr>
+<tr valign='top'>
+<td><code>svdMaxIter</code></td>
+<td>Integer</td>
+<td><code>150 </code></td>
+<td>Maximum number of iterations for the singular value decomposition of the final second derivative matrix.</td>
+</tr>
+<tr valign='top'>
+<td><code>useAnalyticalHessianForOptimization</code></td>
+<td>Integer</td>
+<td><code>0 </code></td>
+<td>If the second derivative matrix is available, it is used in the optimization algorithm if the parameter is different from 0.</td>
+</tr>
+<tr valign='top'>
+<td><code>varCovarFromBHHH</code></td>
+<td>Integer</td>
+<td><code>0 </code></td>
+<td>The computation of the variance-covariance matrix of the estimated parameters using finite difference approximation may take a while for complex models. It is sometimes useful to use the BHHH approximation, which is much faster to compute. If so, set this parameter to 1. It is recommended not to use BHHH in the final model. </td>
+</tr>
+<tr valign='top'>
+<td><code>warnsForIllegalElements</code></td>
+<td>Integer</td>
+<td><code>1 </code></td>
+<td>The expression <code>Elem</code> is designed to access an element from a dictionary. If Biogeme tries to access an element not in the dictionary, it will trigger a warning if the parameter is set to 1, and stay silent if set to 0.</td>
+</tr>
+</table>
+</div>
+
+</div>
+
+<!-- ================================================================================================================= -->
+
+<div class='right-col'><!-- div 1 -->
+
+<ul class='tree'>
+<li><a href='index.html'>Content</a></li>
+<li><a href='http://biogeme.epfl.ch'>Biogeme</a></li>
+</ul>
+
+</div>    
+    <div class='clear'></div>
+
+<a href='index.html'>Content</a><BR>
+<a href='http://biogeme.epfl.ch'>Biogeme</a>
+
+
+</body>
+</html>
